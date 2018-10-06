@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class FunctionBank : MonoBehaviour {
 
-	public float time { get; set; }
-	public float timeIn { get; set; }
-	public float timeOut { get; set; }
-
-	void Start() {
-		time = 0;
-		timeIn = 0;
-		timeOut = 0;
-	}
-
 	public float Constrain(float valor, float start, float stop) {
 		if (valor > stop) {
 			valor = stop;

@@ -20,6 +20,7 @@ public class AirplaneController : MonoBehaviour {
 		speed = airplanePhysics.Speed();
 		rotation = airplanePhysics.Rotation();
 		transform.Translate(speed);
+		transform.position += airplanePhysics.Phenomena();
 		transform.rotation = Quaternion.Euler(rotation);
 	}
 }

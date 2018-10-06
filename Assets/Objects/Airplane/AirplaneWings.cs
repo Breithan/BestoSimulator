@@ -40,11 +40,11 @@ public class AirplaneWings : MonoBehaviour {
 
 	float  Takeoff() {
 		if (Input.GetAxis("Vertical") > 0) {
-			takeoffTilt = Mathf.MoveTowards(takeoffTilt, -10, Time.deltaTime);
+			takeoffTilt = Mathf.MoveTowards(takeoffTilt, 20, Time.deltaTime * 1.5f);
 		} else if (Input.GetAxis("Vertical") < 0) {
-			takeoffTilt = Mathf.MoveTowards(takeoffTilt, 10, Time.deltaTime);
+			takeoffTilt = Mathf.MoveTowards(takeoffTilt, -20, Time.deltaTime * 1.5f);
 		} else {
-			takeoffTilt = Mathf.MoveTowards(takeoffTilt, 0, Time.deltaTime);
+			takeoffTilt = Mathf.MoveTowards(takeoffTilt, 0, Time.deltaTime * 1.5f);
 		}
 
 		return takeoffTilt;

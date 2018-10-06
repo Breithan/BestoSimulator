@@ -6,7 +6,7 @@ public class AirplanePhysics : MonoBehaviour {
 
 	FunctionBank functionBank = null;
 
-	// ---------- Actores internos al avión que alteral el movimiento ---------- //
+	// ---------- Actores internos al avión que alteran el movimiento ---------- //
 	public float potencyTurbineLeft { get; set; }
 	public float potencyTurbineRight { get; set; }
 	public float positionWingLeft  { get; set; }
@@ -15,7 +15,7 @@ public class AirplanePhysics : MonoBehaviour {
 	public float takeoffTilt { get; set; }
 	public bool takeoff { get; set; }
 
-	// ---------- Actores externos al avión que alteral el movimiento ---------- //
+	// ---------- Actores externos al avión que alteran el movimiento ---------- //
 	public float mass;
 	float gravity;
 	float potencyTurbine;
@@ -38,12 +38,12 @@ public class AirplanePhysics : MonoBehaviour {
 		mass *= 10; 
 		potencyTurbine = 0;
 		positionWing = 0;
-		gravity = 0.01f;
+		gravity = -0.01f;
 		speed = new Vector3();
 		rotation = new Vector3();
 		aceleration = new Vector3();
 		wind = new Vector3();
-		friction = new Vector3();
+		friction = new Vector3(0, 0, -0.0001f);
 	}
 	
 	void Update () {
@@ -80,5 +80,21 @@ public class AirplanePhysics : MonoBehaviour {
 
 		rotation = new Vector3(x, y, z);
 		return rotation;
+	}
+
+	public Vector3 Phenomena() {
+		float x = 0;
+		float y = 0;
+		float z = 0;
+		Vector3 phenomena = new Vector3(x, y, z);
+
+		if (takeoff) {
+			y = gravity;
+			phenomena = new Vector3(x, y, z);
+			phenomena += wind;
+			speed += friction;
+		}
+		
+		return phenomena;
 	}
 }

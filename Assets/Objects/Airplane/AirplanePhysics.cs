@@ -17,6 +17,7 @@ public class AirplanePhysics : MonoBehaviour {
 
 	// ---------- Actores externos al avión que alteran el movimiento ---------- //
 	public float mass;
+	public GameObject propeller;
 	float gravity;
 	float potencyTurbine;
 	float positionWing;
@@ -28,6 +29,7 @@ public class AirplanePhysics : MonoBehaviour {
 
 	void Start () {
 		functionBank = gameObject.AddComponent<FunctionBank>();
+		// ---------- Inicializando ---------- //
 		potencyTurbineLeft = 0;
 		potencyTurbineRight = 0;
 		positionWingLeft = 0;
@@ -52,7 +54,9 @@ public class AirplanePhysics : MonoBehaviour {
 		potencyTurbine = potencyTurbineLeft + potencyTurbineRight;
 		positionWing = positionWingLeft - positionWingRight;
 
-		if (speed.z > 1.5f) {
+		propeller.transform.Rotate(new Vector3(0, 0, speed.z * 100));;
+
+		if (speed.z > 0.75f) {
 			takeoff = true;
 		}
 	}
@@ -60,7 +64,7 @@ public class AirplanePhysics : MonoBehaviour {
 	public Vector3 Speed() {
 		aceleration = new Vector3(0, 0, potencyTurbine / mass);
 		speed += aceleration;
-		float z = functionBank.Constrain(speed.z, 0, 2);
+		float z = functionBank.Constrain(speed.z, 0, 1);
 		speed = new Vector3(0, 0, z);
 		return speed;
 	}
@@ -89,7 +93,10 @@ public class AirplanePhysics : MonoBehaviour {
 		Vector3 phenomena = new Vector3(x, y, z);
 
 		if (takeoff) {
-			y = gravity;
+			if (this.transform.position.y > 3) {
+				y = gravity;
+			}
+			
 			phenomena = new Vector3(x, y, z);
 			phenomena += wind;
 			speed += friction;

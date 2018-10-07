@@ -25,7 +25,7 @@ public class AirplaneWings : MonoBehaviour {
 	}
 	
 	void Update () {
-		if (Takeoff() != 0 && locationWing != "tail") {
+		if (Takeoff() != 0 && locationWing != "tail" && airplanePhysics.takeoff) {
 			airplanePhysics.takeoffTilt = Takeoff();
 		}
 
@@ -40,11 +40,11 @@ public class AirplaneWings : MonoBehaviour {
 
 	float  Takeoff() {
 		if (Input.GetAxis("Vertical") > 0) {
-			takeoffTilt = Mathf.MoveTowards(takeoffTilt, 20, Time.deltaTime * 1.5f);
+			takeoffTilt = Mathf.MoveTowards(takeoffTilt, 20, Time.deltaTime * 2);
 		} else if (Input.GetAxis("Vertical") < 0) {
-			takeoffTilt = Mathf.MoveTowards(takeoffTilt, -20, Time.deltaTime * 1.5f);
+			takeoffTilt = Mathf.MoveTowards(takeoffTilt, -20, Time.deltaTime * 2);
 		} else {
-			takeoffTilt = Mathf.MoveTowards(takeoffTilt, 0, Time.deltaTime * 1.5f);
+			takeoffTilt = Mathf.MoveTowards(takeoffTilt, 0, Time.deltaTime * 2);
 		}
 
 		return takeoffTilt;
@@ -52,32 +52,32 @@ public class AirplaneWings : MonoBehaviour {
 	}
 
 	float Position() {
-		if (airplanePhysics.takeoff && airplanePhysics.gameObject.transform.position.y > 7) {
+		if (airplanePhysics.takeoff) {
 			if (locationWing == "left") {
 				if (Input.GetAxis("Horizontal") < 0) {
-					positionWing = Mathf.MoveTowards(positionWing, 0, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, 0, Time.deltaTime * 0.75f);
 				} else if (Input.GetAxis("Horizontal") > 0) {
-					positionWing = Mathf.MoveTowards(positionWing, 2, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, 2, Time.deltaTime * 0.75f);
 				} else {
-					positionWing = Mathf.MoveTowards(positionWing, 1, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, 1, Time.deltaTime * 0.75f);
 				}
 			} else if (locationWing == "right") {
 				if (Input.GetAxis("Horizontal") > 0) {
-					positionWing = Mathf.MoveTowards(positionWing, 0, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, 0, Time.deltaTime * 0.75f);
 				} else if (Input.GetAxis("Horizontal") < 0) {
-					positionWing = Mathf.MoveTowards(positionWing, 2, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, 2, Time.deltaTime * 0.75f);
 				} else {
-					positionWing = Mathf.MoveTowards(positionWing, 1, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, 1, Time.deltaTime * 0.75f);
 				}
 			} 
 		} else {
 			if (locationWing == "tail") {
 				if (Input.GetAxis("Horizontal") < 0) {
-					positionWing = Mathf.MoveTowards(positionWing, -1, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, -1, Time.deltaTime * 0.75f);
 				} else if (Input.GetAxis("Horizontal") > 0) {
-					positionWing = Mathf.MoveTowards(positionWing, 1, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, 1, Time.deltaTime * 0.75f);
 				} else {
-					positionWing = Mathf.MoveTowards(positionWing, 0, Time.deltaTime * 0.5f);
+					positionWing = Mathf.MoveTowards(positionWing, 0, Time.deltaTime * 0.75f);
 				}
 			}
 		}

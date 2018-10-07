@@ -11,8 +11,8 @@ public class AirplaneController : MonoBehaviour {
 	public Vector3 rotation;
 
 	void Start () {
-		speed = new Vector3(0, 0, 0);
-		rotation = new Vector3(0, 0, 0);
+		speed = new Vector3();
+		rotation = new Vector3();
 		airplanePhysics = GetComponent<AirplanePhysics>();
 	}
 	

@@ -58,6 +58,7 @@
      <Compile Include="Assets\Objects\Airplane\AirplanePhysics.cs" />
      <Compile Include="Assets\Objects\Airplane\AirplaneTurbines.cs" />
      <Compile Include="Assets\Objects\Airplane\AirplaneWings.cs" />
+     <None Include="Assets\Kenney Assets\Racing Kit\License.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/Study/Unity/Airplane/Airplane/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

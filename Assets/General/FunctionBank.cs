@@ -18,12 +18,10 @@ public class FunctionBank : MonoBehaviour {
 
 	public float Map(float valor, float start1, float stop1, float start2, float stop2) {
 		float delta = 0;
-		delta = stop1 - start1;
-		valor -= delta;
-		valor /= delta; // --- Valor va de 0 a 1.
-        delta = stop2 - start2;
-		valor *= delta;
-        valor += delta; 
+		
+		delta = (stop2 - start2) / (stop1 - start1);
+		valor = start2 + delta * (valor - start1);
+		
 		return valor;
 	}
 }

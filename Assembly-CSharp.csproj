@@ -54,11 +54,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\General\FunctionBank.cs" />
+     <Compile Include="Assets\Objects\Airplane\Airplane.cs" />
      <Compile Include="Assets\Objects\Airplane\AirplaneController.cs" />
-     <Compile Include="Assets\Objects\Airplane\AirplanePhysics.cs" />
-     <Compile Include="Assets\Objects\Airplane\AirplaneTurbines.cs" />
-     <Compile Include="Assets\Objects\Airplane\AirplaneWings.cs" />
-     <None Include="Assets\Kenney Assets\Racing Kit\License.txt" />
+     <Compile Include="Assets\Objects\Airplane\AirplaneInclinationDetect.cs" />
+     <Compile Include="Assets\Objects\Airplane\AirplanePhysical.cs" />
+     <Compile Include="Assets\Objects\Airplane\AirplanePotencyDetect.cs" />
+     <Compile Include="Assets\Objects\Airplane\On Button\AirplaneOnButton.cs" />
+     <Compile Include="Assets\Objects\Airplane\Propeller\AirplanePropeller.cs" />
+     <None Include="Assets\Models\Kenney Assets\Racing Kit\License.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/Study/Unity/Airplane/Airplane/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

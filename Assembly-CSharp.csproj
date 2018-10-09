@@ -61,6 +61,7 @@
      <Compile Include="Assets\Objects\Airplane\AirplanePotencyDetect.cs" />
      <Compile Include="Assets\Objects\Airplane\On Button\AirplaneOnButton.cs" />
      <Compile Include="Assets\Objects\Airplane\Propeller\AirplanePropeller.cs" />
+     <Compile Include="Assets\Objects\Wind\Wind.cs" />
      <None Include="Assets\Models\Kenney Assets\Racing Kit\License.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/Study/Unity/Airplane/Airplane/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

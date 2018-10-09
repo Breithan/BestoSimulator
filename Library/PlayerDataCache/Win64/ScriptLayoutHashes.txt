@@ -171,3 +171,4 @@ e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 d6c5ab5dd4851f8599fd2f6098fc0a1d Assembly-CSharp.dll:.AirplaneOnButton
+146f67d7dd17bad76bf055bc17e3ad07 Assembly-CSharp.dll:.Wind
